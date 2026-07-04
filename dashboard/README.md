@@ -22,12 +22,12 @@ Sử dụng kiến trúc **Star Schema** (Lược đồ hình sao) với 1 bản
 
 **Tính Tổng Doanh thu:**
 ```dax
-Total Revenue = SUM(fact_sales[sales])
+Total Revenue = SUM('fact_sales'[sales])
 ```
 
 **Tính Tổng Lợi nhuận:**
 ```dax
-Total Profit = SUM(fact_sales[profit])
+Total Profit = SUM('fact_sales'[profit])
 ```
 
 **Biên Lợi Nhuận (Profit Margin %):**
@@ -37,13 +37,13 @@ Profit Margin % = DIVIDE([Total Profit], [Total Revenue], 0)
 
 **Doanh thu lũy kế năm (YTD Revenue):**
 ```dax
-YTD Revenue = CALCULATE([Total Revenue], DATESYTD(dim_date[date_id]))
+YTD Revenue = CALCULATE([Total Revenue], DATESYTD('dim_date'[date_id]))
 ```
 
 **Tốc độ tăng trưởng tháng (MoM Growth):**
 ```dax
 MoM Revenue Growth % = 
-VAR PrevMonthRev = CALCULATE([Total Revenue], PREVIOUSMONTH(dim_date[date_id]))
+VAR PrevMonthRev = CALCULATE([Total Revenue], PREVIOUSMONTH('dim_date'[date_id]))
 RETURN DIVIDE([Total Revenue] - PrevMonthRev, PrevMonthRev, 0)
 ```
 
