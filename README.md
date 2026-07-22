@@ -5,7 +5,7 @@
 ![SQL Server](https://img.shields.io/badge/SQL_Server-CC292B?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
 
-![E-commerce Dashboard Mockup](dashboard/dashboard_mockup.png)
+![E-commerce Dashboard Mockup](dashboard/dashboard.png)
 
 ## **🔎 1. Tổng quan dự án (Project Overview)**
 
@@ -37,11 +37,11 @@ graph LR
 
 | Phân khu | Mô tả chi tiết | Liên kết nhanh |
 | :--- | :--- | :--- |
-| **1. Python Data Prep** | File Jupyter Notebook làm sạch dữ liệu, kiểm toán chất lượng | [notebooks/](./notebooks/) |
-| **2. Kiến trúc & Model** | Từ điển dữ liệu, sơ đồ ERD, thiết kế Star Schema | [docs/](./docs/) |
-| **3. Báo cáo Data Audit**| Tóm tắt chất lượng dữ liệu ban đầu và Business Insights | [reports/](./reports/) |
-| **4. Database & ETL** | Mã SQL tạo Schema chuẩn 3NF và luồng nạp dữ liệu ETL | [sql/](./sql/) |
-| **5. Power BI** | File Dashboard .pbix và Hướng dẫn thiết kế Premium UI/UX | [dashboard/](./dashboard/) |
+| **1. Dữ liệu (Data)** | Cấu trúc dữ liệu thô (raw) và sạch (cleaned) | [data/](./data/) |
+| **2. Kiến trúc Pipeline** | Từ điển dữ liệu, sơ đồ ERD, luồng ETL, thiết kế Star Schema 3NF | [DATA_PIPELINE.md](./DATA_PIPELINE.md) |
+| **3. Data Prep & Audit**| File Python làm sạch dữ liệu, báo cáo Business Insights | [notebooks/](./notebooks/) |
+| **4. Advanced Analytics** | Mã SQL tạo Schema chuẩn 3NF, xử lý nghiệp vụ và truy vấn KPI | [sql/](./sql/) |
+| **5. Power BI Dashboard**| File Dashboard .pbix và Hướng dẫn thiết kế Premium UI/UX | [dashboard/](./dashboard/) |
 
 ---
 
