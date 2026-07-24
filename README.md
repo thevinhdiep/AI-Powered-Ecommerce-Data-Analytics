@@ -156,20 +156,21 @@ Dựa trên các "nỗi đau" (Pain-points) tìm thấy ở báo cáo SQL và Da
 ## **📁 7. Cấu trúc Thư mục (Repository Structure)**
 ```text
 Portfolio/
-├── assets/                           # Hình ảnh Database Schema, Kết quả truy vấn, Dashboard
-├── data/                             # Dữ liệu gốc (raw), làm sạch (cleaned) & Data Dictionary
-├── notebooks/                        # Python Scripts: Làm sạch dữ liệu & Kiểm toán hệ thống
-│   └── data_audit_tables/            # Bảng báo cáo đánh giá chất lượng dữ liệu
-├── sql/                              # SQL Scripts: Khởi tạo DB, ETL và Phân tích nâng cao
-│   ├── 01_create_schema.sql          # Thiết kế Star Schema
-│   ├── 02_etl_pipeline.sql           # Kịch bản nạp dữ liệu BULK INSERT
-│   └── 04_business_analytics.sql     # Các câu truy vấn CTE & Window Functions
-├── machine_learning/                 # Trí tuệ nhân tạo (Học máy không giám sát)
-│   ├── customer_segmentation.ipynb   # Pipeline K-Means Clustering (Phân cụm KH)
-│   └── README.md                     # Báo cáo kết quả phân mảnh
-├── dashboard/                        # Trực quan hóa dữ liệu
-│   └── dashboard.pbix                # File Power BI
-├── DATA_PIPELINE.md                  # Kiến trúc hệ thống: Sơ đồ ERD Star Schema
-├── requirements.txt                  # Môi trường thư viện Python (Pandas, Scikit-Learn...)
-└── README.md                         # Báo cáo tổng quan dự án (File hiện tại)
+├── assets/
+├── data/                                    # Dữ liệu gốc (raw), làm sạch (cleaned) & Data 
+├── notebooks/                               # Jupyter Notebooks (Khám phá & Trực quan)
+|            
+├── sql/                                     # SQL Scripts: Khởi tạo DB, ETL và Phân tích
+│   ├── 01_create_schema.sql                 
+│   ├── 02_etl_pipeline.sql                  
+│   ├── 03_data_validation.sql               
+│   └── 04_business_analytics.sql            
+├── machine_learning/                        # Trí tuệ nhân tạo (Học máy không giám sát)
+│   ├── customer_segmentation.ipynb          
+│   └── README.md                            
+├── dashboard/                               # Trực quan hóa dữ liệu (Power BI)
+│   └── dashboard.pbix                       
+├── DATA_PIPELINE.md                         # Kiến trúc hệ thống: Sơ đồ ERD & Data Flow
+├── requirements.txt                         
+└── README.md                                # Báo cáo tổng quan dự án (File hiện tại)
 ```
