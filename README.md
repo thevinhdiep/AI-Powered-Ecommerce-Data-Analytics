@@ -7,8 +7,6 @@
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 ![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
 
-![E-commerce Dashboard Mockup](dashboard/dashboard.png)
-
 ## **🔎 1. Tổng quan dự án (Project Overview)**
 
 Dự án này là một **giải pháp phân tích dữ liệu toàn diện (Full-Stack Data Solution)** cho doanh nghiệp thương mại điện tử dựa trên tập dữ liệu lịch sử năm 2018 (hơn 51,000 đơn hàng). Quy trình triển khai chuyên nghiệp và khép kín qua 5 trụ cột cốt lõi:
@@ -165,7 +163,7 @@ Portfolio/
 │   ├── 02_etl_pipeline.sql                  
 │   ├── 03_data_validation.sql               
 │   └── 04_business_analytics.sql            
-├── machine_learning/                        # Trí tuệ nhân tạo (Học máy không giám sát)
+├── machine_learning/                        # K-Means Clustering (RFM)
 │   ├── customer_segmentation.ipynb          
 │   └── README.md                            
 ├── dashboard/                               # Trực quan hóa dữ liệu (Power BI)
