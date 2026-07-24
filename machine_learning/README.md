@@ -34,6 +34,13 @@ graph LR
 | 💎 **Premium One-Time** | Monetary lớn nhưng mua ít lần, lâu chưa quay lại | Win-back campaign, Cross-sell, mã giảm giá giới hạn |
 | ⚠️ **Low-Value / Churn Risk** | Tất cả chỉ số đều thấp | Tự động hóa voucher xả kho, kiểm soát ROI |
 
+### **Mô hình trực quan (Visualizations)**
+*Không gian 3D biểu diễn 3 cụm khách hàng phân tách rõ rệt dựa trên mô hình RFM:*
+![3D Scatter Plot](../assets/ml_3d_scatter.png)
+
+*Đồ thị đánh giá chất lượng thuật toán (Tìm K tối ưu):*
+![Elbow Silhouette](../assets/ml_elbow_silhouette.png)
+
 ## Công cụ sử dụng
 
 - **Python 3.11+** — Ngôn ngữ lập trình chính

@@ -84,6 +84,18 @@ Mô hình dữ liệu phẳng (Flat-file) được bóc tách thành **Star Sche
 Giải quyết các bài toán vận hành thực tế bằng T-SQL: phân tích biên lợi nhuận, doanh thu theo thời gian, lọc khách hàng VIP, cước phí vận chuyển và thời gian giao hàng (Aging).
 > 📁 **Mã nguồn:** [`sql/04_business_analytics.sql`](./sql/04_business_analytics.sql)
 
+<details>
+<summary><b>🖼️ Xem ảnh Kết quả SQL (Click để mở rộng)</b></summary>
+<br>
+
+![YTD Revenue SQL Query](assets/sql_query01.png)
+<br>
+![Top 5 VIP Customer SQL Query](assets/sql_query02.png)
+<br>
+![Payment Method Analysis SQL Query](assets/sql_query03.png)
+
+</details>
+
 ### **4.4. Machine Learning Customer Segmentation (Phân khúc Khách hàng bằng Học máy)**
 Xây dựng pipeline phân cụm khách hàng nâng cao trên Python (Jupyter Notebook):
 - Trích xuất đặc trưng **RFM** (Recency, Frequency, Monetary) kết hợp `Avg_Discount` và `Avg_Profit` từ dữ liệu 51,000 đơn hàng.
@@ -91,6 +103,18 @@ Xây dựng pipeline phân cụm khách hàng nâng cao trên Python (Jupyter No
 - Tìm K tối ưu bằng **Elbow Method** và **Silhouette Score**. Chạy K-Means phân mảnh tập khách hàng thành 3 nhóm rõ rệt: **VIP Loyal**, **Premium One-Time**, **Churn Risk**.
 - Trực quan hóa các cụm 3D bằng **Plotly Express** (Scatter 3D, Radar Chart, Donut Chart).
 > 📁 **Mã nguồn:** [`machine_learning/customer_segmentation.ipynb`](./machine_learning/customer_segmentation.ipynb)
+
+<details>
+<summary><b>🖼️ Xem hình ảnh kết quả Mô hình (Click để mở rộng)</b></summary>
+<br>
+
+**1. Không gian 3D Scatter Plot (Recency x Frequency x Monetary)**
+![3D Scatter Plot](assets/ml_3d_scatter.png)
+
+**2. Tìm K tối ưu bằng thuật toán Elbow & Silhouette**
+![Elbow Silhouette](assets/ml_elbow_silhouette.png)
+
+</details>
 
 ---
 
@@ -103,6 +127,12 @@ Toàn bộ kết quả phân tích SQL đã được trực quan hóa thành Das
   - Tỷ trọng Doanh thu theo Ngành hàng (Donut Chart).
   - Bảng xếp hạng Top 10 Sản phẩm & Khách hàng mang lại giá trị cao nhất (Column Chart & Matrix lồng Data Bars).
 > 📁 **Mã nguồn:** [`dashboard/`](./dashboard/)
+
+#### **Trang 1: Executive Summary (Tổng quan kinh doanh)**
+![Dashboard Page 1](assets/page1.png)
+
+#### **Trang 2: Customer Behavior (Hành vi khách hàng)**
+![Dashboard Page 2](assets/page2.png)
 
 ---
 
@@ -126,14 +156,20 @@ Dựa trên các "nỗi đau" (Pain-points) tìm thấy ở báo cáo SQL và Da
 ## **📁 7. Cấu trúc Thư mục (Repository Structure)**
 ```text
 Portfolio/
-├── data/                             # Dữ liệu gốc (raw) và dữ liệu đã làm sạch (cleaned)
-├── notebooks/                        # Python Scripts: Data Cleaning & Business Reports
+├── assets/                           # Hình ảnh Database Schema, Kết quả truy vấn, Dashboard
+├── data/                             # Dữ liệu gốc (raw), làm sạch (cleaned) & Data Dictionary
+├── notebooks/                        # Python Scripts: Làm sạch dữ liệu & Kiểm toán hệ thống
+│   └── data_audit_tables/            # Bảng báo cáo đánh giá chất lượng dữ liệu
 ├── sql/                              # SQL Scripts: Khởi tạo DB, ETL và Phân tích nâng cao
-├── machine_learning/                 # K-Means Clustering: RFM Customer Segmentation
-│   ├── customer_segmentation.ipynb   # Pipeline ML hoàn chỉnh (7 bước)
-│   └── README.md                     # Tài liệu hướng dẫn & kết quả
-├── dashboard/                        # File Power BI & Hướng dẫn thiết kế giao diện Dark-Mode
-├── DATA_PIPELINE.md                  # Kiến trúc hệ thống: Data Dictionary & ERD Star Schema
-├── requirements.txt                  # Môi trường thư viện Python (Pandas, Scikit-Learn, Plotly)
+│   ├── 01_create_schema.sql          # Thiết kế Star Schema
+│   ├── 02_etl_pipeline.sql           # Kịch bản nạp dữ liệu BULK INSERT
+│   └── 04_business_analytics.sql     # Các câu truy vấn CTE & Window Functions
+├── machine_learning/                 # Trí tuệ nhân tạo (Học máy không giám sát)
+│   ├── customer_segmentation.ipynb   # Pipeline K-Means Clustering (Phân cụm KH)
+│   └── README.md                     # Báo cáo kết quả phân mảnh
+├── dashboard/                        # Trực quan hóa dữ liệu
+│   └── dashboard.pbix                # File Power BI
+├── DATA_PIPELINE.md                  # Kiến trúc hệ thống: Sơ đồ ERD Star Schema
+├── requirements.txt                  # Môi trường thư viện Python (Pandas, Scikit-Learn...)
 └── README.md                         # Báo cáo tổng quan dự án (File hiện tại)
 ```
