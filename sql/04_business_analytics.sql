@@ -6,11 +6,9 @@
 USE EcommerceDB;
 GO
 
--- ---------------------------------------------------------
--- Báo cáo 1: Xu hướng Doanh thu hàng tháng & Doanh thu lũy kế (YTD Revenue)
--- Câu hỏi: Tốc độ tăng trưởng dòng tiền qua từng tháng như thế nào?
--- Kỹ thuật: Window Function (SUM OVER)
--- ---------------------------------------------------------
+-- 1. Xu hướng Doanh thu hàng tháng & Doanh thu lũy kế (YTD Revenue)
+-- Insight: Theo dõi tốc độ tăng trưởng dòng tiền (YTD) để đánh giá sức khỏe tài chính liên tục của doanh nghiệp.
+-- Technique: Window Function (SUM OVER)
 WITH MonthlySales AS (
     SELECT 
         d.order_month,
@@ -27,11 +25,9 @@ FROM MonthlySales
 ORDER BY order_month;
 GO
 
--- ---------------------------------------------------------
--- Báo cáo 2: Xếp hạng Top 5 Khách hàng mang lại Doanh thu cao nhất
--- Câu hỏi: Khách hàng nào (VIP) đóng góp doanh thu lớn nhất cho công ty?
--- Kỹ thuật: Window Function (RANK), OFFSET FETCH
--- ---------------------------------------------------------
+-- 2. Xếp hạng Top 5 Khách hàng mang lại Doanh thu cao nhất
+-- Insight: Xác định Top 5 khách hàng mang lại giá trị cao nhất (VIP) để xây dựng chính sách tri ân và giữ chân.
+-- Technique: Window Function (RANK), OFFSET FETCH
 WITH CustomerRevenue AS (
     SELECT 
         f.customer_id,
@@ -55,11 +51,9 @@ ORDER BY total_revenue DESC
 OFFSET 0 ROWS FETCH NEXT 5 ROWS ONLY;
 GO
 
--- ---------------------------------------------------------
--- Báo cáo 3: Phân tích Hiệu suất Ngành hàng (Biên lợi nhuận)
--- Câu hỏi: Ngành hàng nào bán chạy nhất, ngành nào sinh lời hiệu quả nhất?
--- Kỹ thuật: Aggregation, Toán học (Chống chia cho 0)
--- ---------------------------------------------------------
+-- 3. Phân tích Hiệu suất Ngành hàng (Biên lợi nhuận)
+-- Insight: Đối chiếu Biên lợi nhuận (Profit Margin) giữa các ngành hàng để phân bổ lại ngân sách Marketing.
+-- Technique: Aggregation, Toán học (Chống chia cho 0)
 SELECT 
     p.product_category,
     COUNT(DISTINCT f.order_id) AS total_orders,
@@ -73,11 +67,9 @@ GROUP BY p.product_category
 ORDER BY profit_margin_pct DESC;
 GO
 
--- ---------------------------------------------------------
--- Báo cáo 4: Tốc độ xử lý đơn hàng (Aging) theo Mức độ ưu tiên
--- Câu hỏi: Hệ thống Vận hành/Logistics có ưu tiên xử lý các đơn hàng 'Critical' nhanh hơn không?
--- Kỹ thuật: CASE WHEN trong ORDER BY
--- ---------------------------------------------------------
+-- 4. Tốc độ xử lý đơn hàng (Aging) theo Mức độ ưu tiên
+-- Insight: Hệ thống Vận hành/Logistics có ưu tiên xử lý các đơn hàng 'Critical' nhanh hơn không?
+-- Technique: CASE WHEN trong ORDER BY
 SELECT 
     order_priority,
     COUNT(order_id) AS total_orders,
@@ -95,11 +87,9 @@ ORDER BY
     END;
 GO
 
--- ---------------------------------------------------------
--- Báo cáo 5: Chấm điểm RFM cơ bản (Recency, Frequency, Monetary)
--- Câu hỏi: Nhận diện khách hàng có giá trị cao, khách hàng trung thành hoặc có nguy cơ rời bỏ?
--- Kỹ thuật: Phức hợp CTE, DATEDIFF & Window Functions (NTILE)
--- ---------------------------------------------------------
+-- 5. Chấm điểm RFM cơ bản (Recency, Frequency, Monetary)
+-- Insight: Nhận diện khách hàng có giá trị cao, khách hàng trung thành hoặc có nguy cơ rời bỏ?
+-- Technique: Phức hợp CTE, DATEDIFF & Window Functions (NTILE)
 -- Giả định ngày chạy báo cáo là 01/01/2019 (Sau ngày mua cuối cùng trong năm 2018)
 DECLARE @AnalysisDate DATE = '2019-01-01'; 
 

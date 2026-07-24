@@ -4,16 +4,18 @@
 ![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)
 ![SQL Server](https://img.shields.io/badge/SQL_Server-CC292B?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
 
 ![E-commerce Dashboard Mockup](dashboard/dashboard.png)
 
 ## **🔎 1. Tổng quan dự án (Project Overview)**
 
-Dự án này là một **giải pháp phân tích dữ liệu toàn diện (Full-Stack Data Solution)** cho doanh nghiệp thương mại điện tử dựa trên tập dữ liệu lịch sử năm 2018 (hơn 51,000 đơn hàng). Quy trình triển khai chuyên nghiệp và khép kín qua 4 trụ cột cốt lõi:
+Dự án này là một **giải pháp phân tích dữ liệu toàn diện (Full-Stack Data Solution)** cho doanh nghiệp thương mại điện tử dựa trên tập dữ liệu lịch sử năm 2018 (hơn 51,000 đơn hàng). Quy trình triển khai chuyên nghiệp và khép kín qua 5 trụ cột cốt lõi:
 
-| Trụ cột | 1. Xử lý Dữ liệu (Python) | 2. Xây dựng Data Warehouse | 3. SQL Advanced Analytics | 4. Power BI Dashboard |
-| :--- | :--- | :--- | :--- | :--- |
-| **Công cụ** | Pandas, Jupyter Notebook | SQL Server, T-SQL, ETL, 3NF | Window Functions, CTE | Power BI, DAX, Dark-Mode UI |
+| Trụ cột | 1. Xử lý Dữ liệu (Python) | 2. Xây dựng Data Warehouse | 3. SQL Advanced Analytics | 4. ML Customer Segmentation | 5. Power BI Dashboard |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Công cụ** | Pandas, Jupyter Notebook | SQL Server, T-SQL, ETL, 3NF | Window Functions, CTE | Scikit-Learn, K-Means, Plotly | Power BI, DAX, Dark-Mode UI |
 
 ### **Sơ đồ luồng dữ liệu (Data Pipeline Architecture)**
 
@@ -41,7 +43,8 @@ graph LR
 | **2. Kiến trúc Pipeline** | Từ điển dữ liệu, sơ đồ ERD, luồng ETL, thiết kế Star Schema 3NF | [DATA_PIPELINE.md](./DATA_PIPELINE.md) |
 | **3. Data Prep & Audit**| File Python làm sạch dữ liệu, báo cáo Business Insights | [notebooks/](./notebooks/) |
 | **4. Advanced Analytics** | Mã SQL tạo Schema chuẩn 3NF, xử lý nghiệp vụ và truy vấn KPI | [sql/](./sql/) |
-| **5. Power BI Dashboard**| File Dashboard .pbix và Hướng dẫn thiết kế Premium UI/UX | [dashboard/](./dashboard/) |
+| **5. ML Segmentation** | Pipeline K-Means Clustering, RFM Analysis và hồ sơ phân cụm khách hàng | [machine_learning/](./machine_learning/) |
+| **6. Power BI Dashboard**| File Dashboard .pbix và Hướng dẫn thiết kế Premium UI/UX | [dashboard/](./dashboard/) |
 
 ---
 
@@ -50,6 +53,7 @@ graph LR
 *   **Làm sạch & Kiểm toán Dữ liệu:** Xử lý triệt để các giá trị thiếu (missing values), dữ liệu rác từ tập dataset thô bằng Python (Pandas) để đảm bảo chất lượng dữ liệu đầu vào.
 *   **Xây dựng Kho dữ liệu (Data Warehouse):** Thiết kế mô hình dữ liệu quan hệ (Star Schema) và phát triển kịch bản ETL tự động đẩy dữ liệu từ CSV vào SQL Server.
 *   **Phân tích Kinh doanh Đa chiều:** Truy xuất các chỉ số tài chính, tối ưu vận hành và hành vi mua sắm thông qua các truy vấn SQL nâng cao.
+*   **Phân cụm Khách hàng (ML):** Ứng dụng thuật toán K-Means phân loại ~39,000 khách hàng thành 3 cụm hành vi mua sắm RFM (VIP, Premium, Churn Risk) để định hướng chiến lược Marketing.
 *   **Trực quan hóa cấp C-Level:** Thiết kế Dashboard tương tác mang phong cách hiện đại (Dark-Mode) giúp Giám đốc và Quản lý dễ dàng đưa ra quyết định dựa trên dữ liệu.
 
 ---
@@ -61,7 +65,8 @@ graph LR
 | **1. Data Engineering (ETL)** | Xây dựng luồng `BULK INSERT`, xử lý Staging Table, thiết kế Star Schema chuẩn 3NF trên SQL Server. |
 | **2. Data Cleaning & Audit** | Sử dụng Python Pandas (`.isna()`, `.fillna()`, `.groupby()`) để kiểm toán cấu trúc và làm sạch 51,290 dòng. |
 | **3. Advanced SQL** | Ứng dụng Window Functions, CTE, Subqueries để khai thác Insight kinh doanh chuyên sâu. |
-| **4. BI & Data Visualization** | Viết DAX nâng cao (AOV, MoM Growth) và thiết kế UI/UX Premium trên Power BI. |
+| **4. Machine Learning** | Áp dụng K-Means Clustering, StandardScaler, Elbow/Silhouette để phân cụm khách hàng RFM. Trực quan hóa 3D bằng Plotly. |
+| **5. BI & Data Visualization** | Viết DAX nâng cao (AOV, MoM Growth) và thiết kế UI/UX Premium trên Power BI. |
 
 ---
 
@@ -78,6 +83,14 @@ Mô hình dữ liệu phẳng (Flat-file) được bóc tách thành **Star Sche
 ### **4.3. Phân tích Dữ liệu Nâng cao (Advanced SQL)**
 Giải quyết các bài toán vận hành thực tế bằng T-SQL: phân tích biên lợi nhuận, doanh thu theo thời gian, lọc khách hàng VIP, cước phí vận chuyển và thời gian giao hàng (Aging).
 > 📁 **Mã nguồn:** [`sql/04_business_analytics.sql`](./sql/04_business_analytics.sql)
+
+### **4.4. Machine Learning Customer Segmentation (Phân khúc Khách hàng bằng Học máy)**
+Xây dựng pipeline phân cụm khách hàng nâng cao trên Python (Jupyter Notebook):
+- Trích xuất đặc trưng **RFM** (Recency, Frequency, Monetary) kết hợp `Avg_Discount` và `Avg_Profit` từ dữ liệu 51,000 đơn hàng.
+- Làm sạch dữ liệu, loại bỏ Outliers bằng kỹ thuật **IQR** và chuẩn hóa bằng **StandardScaler**.
+- Tìm K tối ưu bằng **Elbow Method** và **Silhouette Score**. Chạy K-Means phân mảnh tập khách hàng thành 3 nhóm rõ rệt: **VIP Loyal**, **Premium One-Time**, **Churn Risk**.
+- Trực quan hóa các cụm 3D bằng **Plotly Express** (Scatter 3D, Radar Chart, Donut Chart).
+> 📁 **Mã nguồn:** [`machine_learning/customer_segmentation.ipynb`](./machine_learning/customer_segmentation.ipynb)
 
 ---
 
@@ -116,8 +129,11 @@ Portfolio/
 ├── data/                             # Dữ liệu gốc (raw) và dữ liệu đã làm sạch (cleaned)
 ├── notebooks/                        # Python Scripts: Data Cleaning & Business Reports
 ├── sql/                              # SQL Scripts: Khởi tạo DB, ETL và Phân tích nâng cao
+├── machine_learning/                 # K-Means Clustering: RFM Customer Segmentation
+│   ├── customer_segmentation.ipynb   # Pipeline ML hoàn chỉnh (7 bước)
+│   └── README.md                     # Tài liệu hướng dẫn & kết quả
 ├── dashboard/                        # File Power BI & Hướng dẫn thiết kế giao diện Dark-Mode
 ├── DATA_PIPELINE.md                  # Kiến trúc hệ thống: Data Dictionary & ERD Star Schema
-├── requirements.txt                  # Môi trường thư viện Python (Pandas, Numpy)
+├── requirements.txt                  # Môi trường thư viện Python (Pandas, Scikit-Learn, Plotly)
 └── README.md                         # Báo cáo tổng quan dự án (File hiện tại)
 ```
