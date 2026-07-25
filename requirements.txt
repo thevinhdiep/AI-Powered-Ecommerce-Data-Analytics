@@ -6,3 +6,10 @@ matplotlib>=3.7.0
 seaborn>=0.12.0
 jupyterlab>=4.0.0
 notebook>=7.0.0
+
+streamlit
+langchain
+langchain-community
+langchain-google-genai
+sqlalchemy
+pyodbc

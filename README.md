@@ -1,19 +1,19 @@
-# **🛍️ Phân Tích Dữ Liệu & Hành Vi Khách Hàng E-Commerce (End-to-End Analytics)**
+# **🛍️ Phân Tích Dữ Liệu & AI Trợ Lý E-Commerce (End-to-End Analytics & AI Assistant)**
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)
 ![SQL Server](https://img.shields.io/badge/SQL_Server-CC292B?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
+![Gemini AI](https://img.shields.io/badge/Gemini_AI-8E75B2?style=for-the-badge&logo=google-bard&logoColor=white)
 
 ## **🔎 1. Tổng quan dự án (Project Overview)**
 
-Dự án này là một **giải pháp phân tích dữ liệu toàn diện (Full-Stack Data Solution)** cho doanh nghiệp thương mại điện tử dựa trên tập dữ liệu lịch sử năm 2018 (hơn 51,000 đơn hàng). Quy trình triển khai chuyên nghiệp và khép kín qua 5 trụ cột cốt lõi:
+Dự án này là một **giải pháp phân tích dữ liệu toàn diện (Full-Stack Data Solution)** cho doanh nghiệp thương mại điện tử dựa trên tập dữ liệu lịch sử (hơn 51,000 đơn hàng). Quy trình triển khai chuyên nghiệp và khép kín qua 6 trụ cột cốt lõi:
 
-| Trụ cột | 1. Xử lý Dữ liệu (Python) | 2. Xây dựng Data Warehouse | 3. SQL Advanced Analytics | 4. ML Customer Segmentation | 5. Power BI Dashboard |
+| 1. Xử lý Dữ liệu | 2. Data Warehouse | 3. SQL Analytics | 4. ML Segmentation | 5. Power BI | 6. AI Data Assistant |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Công cụ** | Pandas, Jupyter Notebook | SQL Server, T-SQL, ETL, 3NF | Window Functions, CTE | Scikit-Learn, K-Means, Plotly | Power BI, DAX, Dark-Mode UI |
+| Python, Pandas | SQL Server, T-SQL | Window Functions | Scikit-Learn, K-Means | Power BI, DAX | Gemini API, Streamlit, LangChain |
 
 ### **Sơ đồ luồng dữ liệu (Data Pipeline Architecture)**
 
@@ -151,9 +151,23 @@ Dựa trên các "nỗi đau" (Pain-points) tìm thấy ở báo cáo SQL và Da
 
 ---
 
+## **🤖 6.5. Tích hợp Trợ lý AI (E-commerce Data Assistant)**
+Dự án được trang bị một Chatbot AI thông minh nhằm hỗ trợ người dùng nghiệp vụ (Business Users) tra cứu số liệu mà không cần biết viết code.
+- **Công nghệ:** Streamlit, Google Gemini API, LangChain.
+- **Tính năng nổi bật:**
+  - **Tự động hóa SQL:** Dịch câu hỏi ngôn ngữ tự nhiên thành câu lệnh T-SQL và truy vấn trực tiếp vào SQL Server.
+  - **Định tuyến thông minh (Router):** Tự động phân loại các câu giao tiếp thông thường (Chitchat) và các câu hỏi cần lấy số liệu.
+  - **Giao diện Minimalist:** Thiết kế Dark Mode tinh tế, chuyên nghiệp.
+*Cách chạy ứng dụng (Local):* `streamlit run ai_assistant/app.py`
+
+---
+
 ## **📁 7. Cấu trúc Thư mục (Repository Structure)**
 ```text
 Portfolio/
+├── ai_assistant/                            # Ứng dụng AI Chatbot Streamlit tích hợp Gemini
+│   ├── app.py                               
+│   └── .streamlit/config.toml               
 ├── assets/
 ├── data/                                    # Dữ liệu gốc (raw), làm sạch (cleaned) & Data 
 ├── notebooks/                               # Jupyter Notebooks (Khám phá & Trực quan)
