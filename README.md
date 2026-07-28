@@ -7,7 +7,7 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
 ![Gemini AI](https://img.shields.io/badge/Gemini_AI-8E75B2?style=for-the-badge&logo=google-bard&logoColor=white)
 
-> 🚀 **[BẤM VÀO ĐÂY ĐỂ XEM LIVE TRỰC TIẾP POWER BI DASHBOARD CỦA DỰ ÁN](https://app.powerbi.com/view?r=eyJrIjoiMjU1NGZiYTQtZmQxNy00ODNlLThhYTctZDdhYzMwNzRmZDA2IiwidCI6ImVkOGYxNjczLTM4OTAtNGRiNC1hM2YwLTk3YWQ5NDI3Yzc0ZiIsImMiOjEwfQ%3D%3D)** 🚀
+> 🚀 **[BẤM VÀO ĐÂY ĐỂ XEM TRỰC TIẾP POWER BI DASHBOARD CỦA DỰ ÁN](https://app.powerbi.com/view?r=eyJrIjoiMjU1NGZiYTQtZmQxNy00ODNlLThhYTctZDdhYzMwNzRmZDA2IiwidCI6ImVkOGYxNjczLTM4OTAtNGRiNC1hM2YwLTk3YWQ5NDI3Yzc0ZiIsImMiOjEwfQ%3D%3D)** 🚀
 
 ## **🔎 1. Tổng quan dự án (Project Overview)**
 
