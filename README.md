@@ -7,6 +7,8 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
 ![Gemini AI](https://img.shields.io/badge/Gemini_AI-8E75B2?style=for-the-badge&logo=google-bard&logoColor=white)
 
+> 🚀 **[BẤM VÀO ĐÂY ĐỂ XEM LIVE TRỰC TIẾP POWER BI DASHBOARD CỦA DỰ ÁN](https://app.powerbi.com/view?r=eyJrIjoiMjU1NGZiYTQtZmQxNy00ODNlLThhYTctZDdhYzMwNzRmZDA2IiwidCI6ImVkOGYxNjczLTM4OTAtNGRiNC1hM2YwLTk3YWQ5NDI3Yzc0ZiIsImMiOjEwfQ%3D%3D)** 🚀
+
 ## **🔎 1. Tổng quan dự án (Project Overview)**
 
 Dự án này là một **giải pháp phân tích dữ liệu toàn diện (Full-Stack Data Solution)** cho doanh nghiệp thương mại điện tử dựa trên tập dữ liệu lịch sử (hơn 51,000 đơn hàng). Quy trình triển khai chuyên nghiệp và khép kín qua 6 trụ cột cốt lõi:
@@ -42,7 +44,7 @@ graph LR
 | **3. Data Prep & Audit**| File Python làm sạch dữ liệu, báo cáo Business Insights | [notebooks/](./notebooks/) |
 | **4. Advanced Analytics** | Mã SQL tạo Schema chuẩn 3NF, xử lý nghiệp vụ và truy vấn KPI | [sql/](./sql/) |
 | **5. ML Segmentation** | Pipeline K-Means Clustering, RFM Analysis và hồ sơ phân cụm khách hàng | [machine_learning/](./machine_learning/) |
-| **6. Power BI Dashboard**| File Dashboard .pbix và Hướng dẫn thiết kế Premium UI/UX | [dashboard/](./dashboard/) |
+| **6. Power BI Dashboard**| File Dashboard .pbix và Hướng dẫn thiết kế Premium UI/UX | [dashboard/](./dashboard/) \| [🌍 Xem Live Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMjU1NGZiYTQtZmQxNy00ODNlLThhYTctZDdhYzMwNzRmZDA2IiwidCI6ImVkOGYxNjczLTM4OTAtNGRiNC1hM2YwLTk3YWQ5NDI3Yzc0ZiIsImMiOjEwfQ%3D%3D) |
 
 ---
 
